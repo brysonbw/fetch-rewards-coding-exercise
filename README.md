@@ -9,17 +9,18 @@
 
 ### Web Service Functionality (example):
 
-- Add transactions ~ REQUEST: { "payer": "example", "points": 10 }
+- Add transactions ~ REQUEST(BODY): { "payer": "example", "points": 10 }
 - RESPONSE: {
   "payer": "EXAMPLE",
   "points": 10
   }
-- Spend points for each transaction ~ REQUEST: { id } = req.params { "points": 3 }
+- Spend points for each transaction ~ REQUEST(PARAM): { id }
+  REQUEST(BODY): { "points": 3 }
 - RESPONSE: {
   "payer": "EXAMPLE",
   "points": 7 - Returns the difference
   }
-- Get the sum of all points for a specific payer ~ REQUEST: { "payer": "example" }
+- Get the sum of all points for a specific payer ~ REQUEST(BODY): { "payer": "example" }
 - RESPONSE: [
   {
   "payer": "EXAMPLE",
@@ -28,7 +29,8 @@
   }
   }
   ]
-  \*Greater sum if "payer": "example" > 1 transaction
+
+  - Greater "\_sum" if "payer": "example" has more than one transaction
 
   ### Copy Heroku link, add API route/call to '/', and run in Postman
 
@@ -37,3 +39,8 @@
   - api/transaction/payerBalance
   - api/transaction/spendPoints/:id
   - api/transaction/delete/:id
+
+### Running in Postman
+
+- Enter values - "payer": <string> & "points": <integer> as JSON in REQUEST(BODY)
+- Example - { "payer": "enterPayerName", "points": enterPointsAmount }
