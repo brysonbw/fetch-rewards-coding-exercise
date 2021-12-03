@@ -14,8 +14,7 @@
   "payer": "EXAMPLE",
   "points": 10
   }
-- Spend points for each transaction ~ REQUEST(PARAM): { id }
-  REQUEST(BODY): { "points": 3 }
+- Spend points for each transaction ~ REQUEST(PARAMS): { id }, REQUEST(BODY): { "points": 3 }
 - RESPONSE: {
   "payer": "EXAMPLE",
   "points": 7 - Returns the difference
